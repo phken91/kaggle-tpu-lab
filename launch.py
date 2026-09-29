@@ -386,7 +386,7 @@ def cmd_status(args):
 def cmd_stop(args):
     st = load_state()
     say(f"Deleting kernel {st['kernel']} (terminates the TPU session)...")
-    p = subprocess.run([sys.executable, "-m", "kaggle", "kernels", "delete",
+    p = subprocess.run(["kaggle", "kernels", "delete",
                         st["kernel"]], input="yes\n", capture_output=True, text=True)
     say((p.stdout + p.stderr).strip() or "done")
 
