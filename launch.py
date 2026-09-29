@@ -71,7 +71,7 @@ PHASE_TEXT = {
 
 
 def kaggle(*args, capture=True):
-    cmd = [sys.executable, "-m", "kaggle", *args]
+    cmd = ["kaggle", *args]
     r = subprocess.run(cmd, capture_output=capture, text=True)
     return r
 
